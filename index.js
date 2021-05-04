@@ -90,6 +90,7 @@ function pickNewSound(){
 
     //const randomArray = Math.floor(Math.random() * numArrays);
     const nextArray = lastArrayPlayed > 0 ? 0 : 1;
+    lastArrayPlayed > 0 ? 0 : 1;
     //this is the same as saying
     //let nextArray;
     // if(lasArrayPlayed > 0){
