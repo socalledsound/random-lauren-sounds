@@ -91,7 +91,7 @@ function pickNewSound(){
     //     } else {
     //         nextArray = 1
     //     }
-    }
+    //}
     const randomSoundFromArray = Math.floor(Math.random() * numSoundsPerArray)
 
    return soundArrays[nextArray][randomSoundFromArray];
