@@ -54,12 +54,18 @@ function draw(){
     
     background(backgroundColor);
     
+    //check if the loop should run or not; the buttons set this value
     if(looping){
     
+        //check if a sound is playing
         if(!soundIsPlaying){
+
+            //our pickNewSound function returns a new sound
             soundPlaying = pickNewSound();
+
             playSound(soundPlaying)
-            soundPlaying.on('end', function(){
+            //Howler gives us an event listener that waits for the end of a sound
+            soundPlaying.on('end', () => {
                soundPlaying = null,
                soundIsPlaying = false;
               });
@@ -94,6 +100,8 @@ function pickNewSound(){
     //}
     const randomSoundFromArray = Math.floor(Math.random() * numSoundsPerArray)
 
+    //sound arrays has two arrays in it so first we choose which array 
+    //and then which sound from that array
    return soundArrays[nextArray][randomSoundFromArray];
     
 }
@@ -103,10 +111,11 @@ function playSound(sound){
     soundIsPlaying = true;
 }
 
-function checkPlayingSound(sound){
-    console.log(sound);
-    return sound.isPlaying()
-}
+//we don't need this because we have an event listener from Howler to listen for the end of a file
+// function checkPlayingSound(sound){
+//     console.log(sound);
+//     return sound.isPlaying()
+// }
 
 
 
